@@ -1,14 +1,16 @@
-# from scryfall_pic_dl import install_scrython_package
-# import asyncio
-# import aiohttp
-# import scrython
+# import for waiting a while for every request to not overload scryfall server
 import time
+# for getting the path of files and create a save folder
 import os
 
-# Import required methods
+# request for using urls in the script
 from requests import get
+# reading out json files for finding the right card in the list
 from json import loads
+# for saving the found card in the end to a png file
 from shutil import copyfileobj
+
+from pathlib import Path
 
 # creating neccessary variables
 # save_folder is the current workind directory
@@ -36,16 +38,16 @@ for image in range(len(lines)):
         card_path_name = card['data'][image_id]['name']
         if card_path_name == lines[image]:
             img_url = card['data'][image_id]['image_uris']['png']
-            # print(img_url)
 
-            # Save the image
-# {os.path.join(save_folder)}
-#    with open(f'{lines[image]}.png', 'wb') as out_file:
-#        copyfileobj(get(img_url, stream=True).raw, out_file)
-#        print(f"Download complete for: {card_path_name}")
+    # creates a f
     file_save_name = os.path.join(save_folder, read_file, lines[image])
 
     # saving the image into the right folder
-    with open(f'{file_save_name}.png', 'wb') as out_file:
-        copyfileobj(get(img_url, stream=True).raw, out_file)
-        print(f"Download complete for: {card_path_name}")
+
+    if Path(f'{file_save_name}.png').exists():
+        # file exists
+        print(f"Allready downloaded: {card_path_name}")
+    else:
+        with open(f'{file_save_name}.png', 'wb') as out_file:
+            copyfileobj(get(img_url, stream=True).raw, out_file)
+            print(f"Download complete for: {card_path_name}")
