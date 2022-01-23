@@ -25,9 +25,8 @@ Black Lotus <br />
 [...]
 
 3. Put the file_name.txt file in the same directory as the main.py file
-4. Run the python script an the shell with "python3 main.py" 
-5. The programm asks you for the name of the .txt file with magic cards you 
-want to download from scryfall.com. Type only the filename without the filetype.
-So without ".txt"
+4. First run the terminal in the same path as the main.py. Or run it with the full path name. Run the python script in the shell with "python3 main.py".
+5. The programm asks you for the name of the .txt file with magic cards you want to download from scryfall.com. 
+Type only the filename without the filetype (without ".txt")
 6. Wait for the Download to finish. 
 7. Pictures can be found in folder with the same name as the .txt file.  
