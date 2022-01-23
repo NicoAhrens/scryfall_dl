@@ -19,9 +19,9 @@ following example:
 
 file_name.txt: 
 
-Sol Ring
-Vindicate 
-Black Lotus
+Sol Ring <br />
+Vindicate <br />
+Black Lotus <br />
 [...]
 
 3. Put the file_name.txt file in the same directory as the main.py file
