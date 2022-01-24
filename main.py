@@ -62,4 +62,4 @@ for image in range(len(lines)):
             copyfileobj(get(img_url, stream=True).raw, out_file)
             # gives out a statement for the user if the download is finished
             # for the given card
-            print(f"Download complete for: {card_path_name}")
+            print(f"Download complete for[{image+1}/{len(lines)}] : {card_path_name}")
